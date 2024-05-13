@@ -247,7 +247,7 @@ void MainWindow::on_btnSeriesPen_clicked()
 {
     bool ok=false;
     QPen pen=curSeries->pen();
-    DialogPen::getPen(pen,ok);
+    pen = DialogPen::getPen(pen,ok);
     if(ok)
         curSeries->setPen(pen);
 }

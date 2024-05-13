@@ -1,14 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2024-04-25T15:15:56
+# Project created by QtCreator 2024-05-02T15:04:03
 #
 #-------------------------------------------------
 
 QT       += core gui
-QT       += datavisualization
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = smapl_10_1
+TARGET = staticLibUser
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -32,3 +32,9 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../include/ -lDLL
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../include/ -lDLLd
+
+INCLUDEPATH += $$PWD/../include
+DEPENDPATH += $$PWD/../include
